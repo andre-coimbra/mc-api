@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pt.paginasamarelas.hibernate.entities">
+
+    <class name="ExtBusinessPhone" table="SYSADM.ExtBusinessPhone">
+        <id name="caNrid" column="ca0_nrid">
+            <generator class="native"/>
+        </id>
+        
+        <property name="phoneNumber" column="phone_no"/>
+       
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+   <property name="hibernate.dialect">
+      org.hibernate.dialect.SQLServer2005Dialect
+   </property>
+   <property name="hibernate.connection.driver_class">
+      com.microsoft.sqlserver.jdbc.SQLServerDriver
+   </property>
+
+   <property name="hibernate.connection.url">
+      jdbc:sqlserver://10.92.205.202;databaseName=CMC_PT
+   </property>
+   <property name="hibernate.connection.username">
+      viewPA
+   </property>
+   <property name="hibernate.connection.password">
+      Amarelas
+   </property>
+   <property name="connection.pool_size">20</property>
+  
+   <property name="show_sql">true</property>
+   
+  
+	
+   <!-- List of XML mapping files -->
+   <mapping resource="pt/paginasamarelas/hibernate/entities/Ca0.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtBusinessAddress.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtBusinessPhone.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtAdvert.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtAdgroup.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtGeoloc.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtLinkedKeyword.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtCustomKeyword.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtLinkedAdcopy.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtCustomAdcopy.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtSitelink.hbm.xml"></mapping>
+   
+
+</session-factory>
+</hibernate-configuration>

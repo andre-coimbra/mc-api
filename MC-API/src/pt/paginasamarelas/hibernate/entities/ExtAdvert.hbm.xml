@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pt.paginasamarelas.hibernate.entities">
+
+    <class name="ExtAdvert" table="SYSADM.ExtAdvert">
+        <id name="advert_id" column="advert_id">
+            <generator class="native"/>
+        </id>
+        <property name="ca0_nrid" column="ca0_nrid"/>
+        <property name="advertLanguage" column="advert_lang"/>
+        <property name="campaignUrl" column="campaignurl"/>
+        <property name="displayUrl" column="displayUrl"/>
+        <property name="heading_nrid" column="heading_nrid"/>
+        <property name="template" column="template"/>
+    </class>
+
+</hibernate-mapping>

@@ -9,7 +9,7 @@
  
     <context:component-scan base-package="com.websystique.spring.scheduling" />
  
- 	<bean id="runScheduler" class="pt.paginasamarelas.scheduler.SpringScheduler" /> 
+ 	<bean id="runScheduler" class="pt.paginasamarelas.logicLayer.scheduler.SpringScheduler" /> 
  	
  	<task:scheduler id="myScheduler" pool-size="10" />
     <task:scheduled-tasks scheduler="myScheduler">

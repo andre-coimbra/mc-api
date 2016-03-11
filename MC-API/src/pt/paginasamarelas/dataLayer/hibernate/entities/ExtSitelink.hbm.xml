@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pt.paginasamarelas.dataLayer.hibernate.entities">
+
+    <class name="ExtSitelink" table="SYSADM.ExtSitelink">
+        <id name="nrid" column="nrid">
+            <generator class="native"/>
+        </id>
+        <property name="ca0_nrid" column="ca0_nrid"/>
+        <property name="sl_name" column="sl_name"/>
+        <property name="requested_url" column="requested_url"/>
+        <property name="template" column="template"/>
+        <property name="heading_nrid" column="heading_nrid"/>
+        
+    </class>
+
+</hibernate-mapping>

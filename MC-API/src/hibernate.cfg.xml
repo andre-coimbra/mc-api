@@ -27,17 +27,17 @@
   
 	
    <!-- List of XML mapping files -->
-   <mapping resource="pt/paginasamarelas/hibernate/entities/Ca0.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtBusinessAddress.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtBusinessPhone.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtAdvert.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtAdgroup.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtGeoloc.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtLinkedKeyword.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtCustomKeyword.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtLinkedAdcopy.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtCustomAdcopy.hbm.xml"></mapping>
-   <mapping resource="pt/paginasamarelas/hibernate/entities/ExtSitelink.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ca0.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtBusinessAddress.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtBusinessPhone.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtAdvert.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtAdgroup.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtGeoloc.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtLinkedKeyword.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtCustomKeyword.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtLinkedAdcopy.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtCustomAdcopy.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtSitelink.hbm.xml"></mapping>
    
 
 </session-factory>

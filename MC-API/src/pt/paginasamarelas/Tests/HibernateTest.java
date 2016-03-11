@@ -10,15 +10,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.junit.Test;
 
-import pt.paginasamarelas.Operations.AdvertiserCreator;
-import pt.paginasamarelas.hibernate.HibernateUtil;
-import pt.paginasamarelas.hibernate.QueryCampaignDB;
-import pt.paginasamarelas.hibernate.entities.ExtAdgroup;
-import pt.paginasamarelas.hibernate.entities.ExtAdvert;
-import pt.paginasamarelas.hibernate.entities.ExtBusinessAddress;
-import pt.paginasamarelas.hibernate.entities.ExtBusinessPhone;
-import pt.paginasamarelas.hibernate.entities.ExtGeoloc;
-import pt.paginasamarelas.hibernate.entities.ca0;
+import pt.paginasamarelas.dataLayer.hibernate.HibernateUtil;
+import pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdgroup;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdvert;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessAddress;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessPhone;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ExtGeoloc;
+import pt.paginasamarelas.dataLayer.hibernate.entities.ca0;
+import pt.paginasamarelas.logicLayer.operations.AdvertiserCreator;
 
 
 public class HibernateTest {
@@ -28,7 +28,6 @@ public class HibernateTest {
 	{
 		//AdvertiserCreator c = new AdvertiserCreator();
 		//c.createAdvertiser("13909005_3300955_158191");
-		
 		getCampaign();
 	}
 	

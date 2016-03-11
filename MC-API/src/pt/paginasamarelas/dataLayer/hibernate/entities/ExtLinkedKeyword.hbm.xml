@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pt.paginasamarelas.dataLayer.hibernate.entities">
+
+    <class name="ExtLinkedKeyword" table="SYSADM.ExtLinkedKeyword">
+        <id name="nrid" column="nrid">
+            <generator class="native"/>
+        </id>
+        
+        <property name="adgroup_nrid" column="adgroup_nrid"/>
+        <property name="keyword_nrid" column="keyword_nrid"/>
+       
+    </class>
+
+</hibernate-mapping>

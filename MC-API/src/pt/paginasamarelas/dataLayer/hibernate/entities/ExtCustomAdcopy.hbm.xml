@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="pt.paginasamarelas.dataLayer.hibernate.entities">
+
+    <class name="ExtCustomAdcopy" table="SYSADM.ExtCustomAdcopy">
+        <id name="nrid" column="nrid">
+            <generator class="native"/>
+        </id>
+        <property name="ca0_nrid" column="ca0_nrid"/>
+        <property name="title" column="title"/>
+        <property name="line1" column="line1"/>
+        <property name="line2" column="line2"/>
+       
+    </class>
+
+</hibernate-mapping>

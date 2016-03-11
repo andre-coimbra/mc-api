@@ -50,7 +50,7 @@ public class RequestBuilder {
 		authentication.setPassword(props.getPassword());
 		
 		Operations operation = new Operations();
-		//operation.setOperator(OperatorEnum.readAdvertiser);
+		operation.setOperator(OperatorEnum.readAdvertiser);
 		
 		Operand operands = new Operand();
 		AdvertiserID advertiserid = new AdvertiserID();

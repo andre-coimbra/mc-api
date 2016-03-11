@@ -36,7 +36,7 @@ public class RESTRequestService {
 		 
 		        // 5. Add JSON data into POST request body 
 		 
-		        //`5.1 Use Jackson object mapper to convert Contnet object into JSON
+		        //`5.1 Use Jackson object mapper to convert Advertiser object into JSON
 		        ObjectMapper mapper = new ObjectMapper();
 		 
 		        // 5.2 Get connection output stream

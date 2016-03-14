@@ -32,7 +32,7 @@ public class AdvertiserCreator
 	
 	
 	
-	public Advertiser createAdvertiser(String externalId) throws MalformedURLException, URISyntaxException
+	public Advertiser createAdvertiser(Advertiser advertiser, String externalId) throws MalformedURLException, URISyntaxException
 	{
 		//Load data from DB
 		
@@ -64,7 +64,8 @@ public class AdvertiserCreator
 		Location[] location = createLocation(extadverts);
 		
 		//Advertiser
-		Advertiser advertiser = new Advertiser();
+		
+		advertiser = new Advertiser();
 		
 		AdvertiserID advertiserid = new AdvertiserID();
 		advertiserid.setExternalId(externalId);

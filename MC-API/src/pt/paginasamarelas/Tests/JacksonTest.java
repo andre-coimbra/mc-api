@@ -37,12 +37,12 @@ public class JacksonTest {
 		AdvertiserCreator c = new AdvertiserCreator();
 		RequestBuilder requestb = new RequestBuilder();
 		
-		Advertiser advertiser =  c.createAdvertiser("13909005_3300955_158191");
-		Request request = requestb.createRequest(advertiser);
+		//Advertiser advertiser =  c.createAdvertiser("13909005_3300955_158191");
+		//Request request = requestb.createRequest(advertiser);
 		
 		//String jsonRequest = requestToJson(request);
 		
-		rest.makeRequest(request);
+		//rest.makeRequest(request);
 		
 		//advertiserToJson(advertiser);
 		/*JacksonTest jacksonTest = new JacksonTest();

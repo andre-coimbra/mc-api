@@ -2,12 +2,12 @@ package pt.paginasamarelas.logicLayer.operations;
 
 import java.io.IOException;
 
-import pt.paginasamarelas.dataLayer.Entities.AdvertiserID;
-import pt.paginasamarelas.dataLayer.Entities.Authentication;
-import pt.paginasamarelas.dataLayer.Entities.Operand;
-import pt.paginasamarelas.dataLayer.Entities.Operations;
-import pt.paginasamarelas.dataLayer.Entities.Request;
-import pt.paginasamarelas.dataLayer.Entities.Operations.OperatorEnum;
+import pt.paginasamarelas.dataLayer.entities.AdvertiserID;
+import pt.paginasamarelas.dataLayer.entities.Authentication;
+import pt.paginasamarelas.dataLayer.entities.Operand;
+import pt.paginasamarelas.dataLayer.entities.Operations;
+import pt.paginasamarelas.dataLayer.entities.Request;
+import pt.paginasamarelas.dataLayer.entities.Operations.OperatorEnum;
 
 public class Filler {
 	

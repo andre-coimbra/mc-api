@@ -1,7 +1,7 @@
 package pt.paginasamarelas.logicLayer.operations;
 
-import pt.paginasamarelas.dataLayer.Entities.Advertiser;
-import pt.paginasamarelas.dataLayer.Entities.Campaign;
+import pt.paginasamarelas.dataLayer.entities.Advertiser;
+import pt.paginasamarelas.dataLayer.entities.Campaign;
 
 public class CampaignUpdater {
 

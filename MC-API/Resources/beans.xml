@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- hibernate entities -->
+	<bean id="ca0" class="pt.paginasamarelas.dataLayer.hibernate.entities.ca0"></bean>
+	<bean id="extadvert" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdvert"></bean>
+	<bean id="extbusinessaddress" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessAddress"></bean>
+	<bean id="extbusinessphone" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessPhone"></bean>
+	<bean id="extcustomadcopy" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtCustomAdcopy"></bean>
+	<bean id="extcustomkeyword" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtCustomKeyword"></bean>
+	<bean id="extgeoloc" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtGeoloc"></bean>
+	<bean id="extlinkedadcopy" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtLinkedAdcopy"></bean>
+	<bean id="extlinkedkeyword" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtLinkedKeyword"></bean>
+	<bean id="extSitelink" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtSitelink"></bean>
+	<!-- hibernate entities -->
+	
+	<!-- pojo entities -->
+	<bean id="advertiser" class="pt.paginasamarelas.dataLayer.entities.Advertiser"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+<!-- 	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean> -->
+	
+	<!-- pojo entities -->
+	
+	
+	<bean id="advertiserCreator" class="pt.paginasamarelas.logicLayer.operations.AdvertiserCreator"></bean>
+</beans>

@@ -9,19 +9,21 @@ import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Session;
 //import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import pt.paginasamarelas.dataLayer.Entities.Advertiser;
-import pt.paginasamarelas.dataLayer.Entities.AdvertiserID;
-import pt.paginasamarelas.dataLayer.Entities.Budget;
-import pt.paginasamarelas.dataLayer.Entities.BusinessAddress;
-import pt.paginasamarelas.dataLayer.Entities.CategoryRef;
-import pt.paginasamarelas.dataLayer.Entities.CustomAdCopy;
-import pt.paginasamarelas.dataLayer.Entities.CustomKeyphrase;
-import pt.paginasamarelas.dataLayer.Entities.GeographicTarget;
-import pt.paginasamarelas.dataLayer.Entities.Location;
-import pt.paginasamarelas.dataLayer.Entities.LocationId;
-import pt.paginasamarelas.dataLayer.Entities.PostalCodeRadius;
-import pt.paginasamarelas.dataLayer.Entities.Sitelink;
+import pt.paginasamarelas.dataLayer.entities.Advertiser;
+import pt.paginasamarelas.dataLayer.entities.AdvertiserID;
+import pt.paginasamarelas.dataLayer.entities.Budget;
+import pt.paginasamarelas.dataLayer.entities.BusinessAddress;
+import pt.paginasamarelas.dataLayer.entities.CategoryRef;
+import pt.paginasamarelas.dataLayer.entities.CustomAdCopy;
+import pt.paginasamarelas.dataLayer.entities.CustomKeyphrase;
+import pt.paginasamarelas.dataLayer.entities.GeographicTarget;
+import pt.paginasamarelas.dataLayer.entities.Location;
+import pt.paginasamarelas.dataLayer.entities.LocationId;
+import pt.paginasamarelas.dataLayer.entities.PostalCodeRadius;
+import pt.paginasamarelas.dataLayer.entities.Sitelink;
 import pt.paginasamarelas.dataLayer.hibernate.HibernateUtil;
 import pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB;
 import pt.paginasamarelas.dataLayer.hibernate.entities.*;
@@ -30,7 +32,7 @@ import pt.paginasamarelas.dataLayer.hibernate.entities.*;
 public class AdvertiserCreator 
 {
 	
-	
+	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
 	public Advertiser createAdvertiser(Advertiser advertiser, String externalId) throws MalformedURLException, URISyntaxException
 	{
@@ -39,7 +41,9 @@ public class AdvertiserCreator
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = new QueryCampaignDB();
 		
-		ca0 ca0 = q.getCa0(externalId, session);
+		ca0 ca0 = (ca0) context.getBean("ca0");
+		
+		ca0 = q.getCa0(externalId, session);
 		BigDecimal BNRID = ca0.getNrid();
 		String nrid = BNRID.toString();
 		
@@ -65,9 +69,10 @@ public class AdvertiserCreator
 		
 		//Advertiser
 		
-		advertiser = new Advertiser();
+		advertiser =  (Advertiser) context.getBean("advertiser");
 		
-		AdvertiserID advertiserid = new AdvertiserID();
+		//AdvertiserID advertiserid = new AdvertiserID();
+		AdvertiserID advertiserid = (AdvertiserID) context.getBean("advertiserID");
 		advertiserid.setExternalId(externalId);
 		
 		advertiser.setAdvertiserId(advertiserid);

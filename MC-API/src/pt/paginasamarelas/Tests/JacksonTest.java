@@ -18,12 +18,12 @@ import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import pt.paginasamarelas.dataLayer.Entities.*;
-import pt.paginasamarelas.dataLayer.Entities.Operations.OperatorEnum;
-import pt.paginasamarelas.dataLayer.Entities.TargetDemographics.Gender;
+import pt.paginasamarelas.dataLayer.entities.*;
+import pt.paginasamarelas.dataLayer.entities.Operations.OperatorEnum;
+import pt.paginasamarelas.dataLayer.entities.TargetDemographics.Gender;
+import pt.paginasamarelas.logicLayer.RESTRequester.RESTRequestService;
 import pt.paginasamarelas.logicLayer.operations.AdvertiserCreator;
 import pt.paginasamarelas.logicLayer.operations.PropertiesReader;
-import pt.paginasamarelas.logicLayer.operations.RESTRequestService;
 import pt.paginasamarelas.logicLayer.operations.RequestBuilder;
 
 

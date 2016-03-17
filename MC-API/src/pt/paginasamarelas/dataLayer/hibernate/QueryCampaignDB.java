@@ -27,6 +27,8 @@ public class QueryCampaignDB {
 	//SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	//Session session = sessionFactory.openSession();
 	
+	
+	
 	@SuppressWarnings("finally")
 	public ca0 getCa0(String nrid, Session session)
 	{

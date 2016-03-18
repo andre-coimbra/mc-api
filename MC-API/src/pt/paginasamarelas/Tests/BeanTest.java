@@ -25,7 +25,7 @@ public class BeanTest {
 		Advertiser a = (Advertiser) context.getBean("advertiser");
 		AdvertiserCreator ac = (AdvertiserCreator) context.getBean("advertiserCreator");
 		
-		a = ac.createAdvertiser(a, "13909005_3300955_158191");
+		a = ac.createAdvertiser("13909005_3300955_158191");
 		String dummy="";
 	}
 

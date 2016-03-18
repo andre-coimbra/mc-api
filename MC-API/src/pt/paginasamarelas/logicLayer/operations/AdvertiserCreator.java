@@ -12,18 +12,7 @@ import org.hibernate.Session;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import pt.paginasamarelas.dataLayer.entities.Advertiser;
-import pt.paginasamarelas.dataLayer.entities.AdvertiserID;
-import pt.paginasamarelas.dataLayer.entities.Budget;
-import pt.paginasamarelas.dataLayer.entities.BusinessAddress;
-import pt.paginasamarelas.dataLayer.entities.CategoryRef;
-import pt.paginasamarelas.dataLayer.entities.CustomAdCopy;
-import pt.paginasamarelas.dataLayer.entities.CustomKeyphrase;
-import pt.paginasamarelas.dataLayer.entities.GeographicTarget;
-import pt.paginasamarelas.dataLayer.entities.Location;
-import pt.paginasamarelas.dataLayer.entities.LocationId;
-import pt.paginasamarelas.dataLayer.entities.PostalCodeRadius;
-import pt.paginasamarelas.dataLayer.entities.Sitelink;
+import pt.paginasamarelas.dataLayer.entities.*;
 import pt.paginasamarelas.dataLayer.hibernate.HibernateUtil;
 import pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB;
 import pt.paginasamarelas.dataLayer.hibernate.entities.*;
@@ -34,7 +23,7 @@ public class AdvertiserCreator
 	
 	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
-	public Advertiser createAdvertiser(Advertiser advertiser, String externalId) throws MalformedURLException, URISyntaxException
+	public Advertiser createAdvertiser(String externalId) throws MalformedURLException, URISyntaxException
 	{
 		//Load data from DB
 		
@@ -69,7 +58,7 @@ public class AdvertiserCreator
 		
 		//Advertiser
 		
-		advertiser =  (Advertiser) context.getBean("advertiser");
+		Advertiser advertiser =  (Advertiser) context.getBean("advertiser");
 		
 		//AdvertiserID advertiserid = new AdvertiserID();
 		AdvertiserID advertiserid = (AdvertiserID) context.getBean("advertiserID");
@@ -96,7 +85,7 @@ public class AdvertiserCreator
 	{
 		if(extbusinessaddress != null)
 		{
-			BusinessAddress businessAddress = new BusinessAddress();
+			BusinessAddress businessAddress = (BusinessAddress) context.getBean("businessaddress");
 			businessAddress.setLine1(extbusinessaddress.getLine1());
 			businessAddress.setLine2(extbusinessaddress.getLine2());
 			businessAddress.setPostalCode(extbusinessaddress.getPostalCode());
@@ -113,7 +102,7 @@ public class AdvertiserCreator
 	
 	public Budget[] createBudgets(ca0 ca0)
 	{
-		Budget budget = new Budget();
+		Budget budget = (Budget) context.getBean("budget");
 		if(ca0.getTargetRetailSpend() != null)
 			budget.setTargetRetailSpend(ca0.getTargetRetailSpend().floatValue());
 		if(ca0.getTargetMediaSpend() != null)
@@ -163,15 +152,16 @@ public class AdvertiserCreator
 		
 	    while(advertIterator.hasNext()) 
 	    {
-	    	ExtAdvert extadvert = (ExtAdvert) advertIterator.next();
+	    	ExtAdvert extadvert = (ExtAdvert) context.getBean("extadvert");
+	    	extadvert = (ExtAdvert) advertIterator.next();
 	    	  
 	    	//LocationID
-	    	LocationId locationId = new LocationId();
+	    	LocationId locationId = (LocationId) context.getBean("locationID");
 			locationId.setExternalId(extadvert.getAdvert_id().toString());
 			//LocationID
 				
 				
-			Location location = new Location();
+			Location location = (Location) context.getBean("location");
 			location.setLocationId(locationId);
 			location.setName(" ");
 			location.setUserStatus("active");
@@ -199,7 +189,7 @@ public class AdvertiserCreator
 			location.setCategoryRefs(categoryRefs);
 			
 			//GeographicTarget
-			GeographicTarget geographicTarget = null;
+			GeographicTarget geographicTarget = (GeographicTarget) context.getBean("geographictarget");
 			geographicTarget = createGeoloc(extadvert.getAdvert_id().toString());
 			
 			location.setGeographicTarget(geographicTarget);
@@ -223,7 +213,7 @@ public class AdvertiserCreator
 	public CategoryRef[] createCategoryRefs(String advertid)
 	{
 		Session session = HibernateUtil.openSession();
-		QueryCampaignDB q = new QueryCampaignDB();
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		
 		List<?> adgroups = q.getExtCustomAdgroupHQL(advertid, session);
 		CategoryRef[] categoryRefs = new CategoryRef[adgroups.size()];
@@ -232,7 +222,7 @@ public class AdvertiserCreator
 		int count = 0;
 	    while(iterator.hasNext()) 
 	    {
-	    	CategoryRef categoryRef = new CategoryRef();
+	    	CategoryRef categoryRef = (CategoryRef) context.getBean("categoryref");
 	    	Object[] extadgroup = (Object[]) iterator.next();
 	    	System.out.println(extadgroup[0].toString());
 	    	
@@ -257,7 +247,7 @@ public class AdvertiserCreator
 	public CustomAdCopy[] createCustomAdcopies(String adgroupid)
 	{
 		Session session = HibernateUtil.openSession();
-		QueryCampaignDB q = new QueryCampaignDB();
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> adcopies = q.getExtCustomAdcopyHQL(adgroupid, session);
 		CustomAdCopy[] customAdcopies = new CustomAdCopy[adcopies.size()];
 		if(adcopies.size()!=0)
@@ -268,7 +258,7 @@ public class AdvertiserCreator
 			while(iterator.hasNext())
 			{
 				Object[] extCustomAdcopy = (Object[]) iterator.next();
-				CustomAdCopy customAdCopy = new CustomAdCopy();
+				CustomAdCopy customAdCopy = (CustomAdCopy) context.getBean("customadcopy");
 				
 				customAdCopy.setLine1(extCustomAdcopy[2].toString());
 				customAdCopy.setLine2(extCustomAdcopy[3].toString());
@@ -288,7 +278,7 @@ public class AdvertiserCreator
 	public CustomKeyphrase[] createCustomKeyphrase(String adgroupid)
 	{
 		Session session = HibernateUtil.openSession();
-		QueryCampaignDB q = new QueryCampaignDB();
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> keyphrases = q.getExtCustomKeywordHQL(adgroupid, session);
 		CustomKeyphrase[] customkeyphrases = new CustomKeyphrase[keyphrases.size()];
 		
@@ -299,7 +289,7 @@ public class AdvertiserCreator
 			while(iterator.hasNext())
 			{
 				Object[] extCustomKeyphrase = (Object[]) iterator.next();
-				CustomKeyphrase customKeyphrase = new CustomKeyphrase();
+				CustomKeyphrase customKeyphrase = (CustomKeyphrase) context.getBean("customkeyphrase");
 				
 				customKeyphrase.setPhrase(extCustomKeyphrase[2].toString());
 				customkeyphrases[count]=customKeyphrase;
@@ -317,10 +307,10 @@ public class AdvertiserCreator
 	public GeographicTarget createGeoloc(String advertid)
 	{
 		Session session = HibernateUtil.openSession();
-		QueryCampaignDB q = new QueryCampaignDB();
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> geolocs = q.getExtGeolocHQL(advertid, session);
 		
-		GeographicTarget geographicTargets = new GeographicTarget();
+		GeographicTarget geographicTargets = (GeographicTarget) context.getBean("geographictarget");
 		PostalCodeRadius[] postalCodesRadius = new PostalCodeRadius[geolocs.size()];
 		if(geolocs.size()!=0)
 		{
@@ -330,7 +320,7 @@ public class AdvertiserCreator
 			{				
 				Object[] extGeoloc = (Object[]) iterator.next();
 				
-				PostalCodeRadius postalCodeRadius = new PostalCodeRadius();
+				PostalCodeRadius postalCodeRadius = (PostalCodeRadius) context.getBean("postalcoderadius");
 				
 				postalCodeRadius.setPostalCode(extGeoloc[0].toString());
 				postalCodeRadius.setRadius(Integer.parseInt(extGeoloc[1].toString()));
@@ -354,7 +344,7 @@ public class AdvertiserCreator
 	public Sitelink[] createSitelink(String advertid)
 	{
 		Session session = HibernateUtil.openSession();
-		QueryCampaignDB q = new QueryCampaignDB();
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> extsitelinks = q.getExtSitelinkHQL(advertid, session);
 		
 		Sitelink[] sitelinks = new Sitelink[extsitelinks.size()];
@@ -367,7 +357,7 @@ public class AdvertiserCreator
 			{				
 				Object[] extSitelink = (Object[]) iterator.next();
 				
-				Sitelink sitelink = new Sitelink();
+				Sitelink sitelink = (Sitelink) context.getBean("sitelink");
 				
 				sitelink.setName(extSitelink[0].toString());
 				String requestedURL = extSitelink[1].toString();

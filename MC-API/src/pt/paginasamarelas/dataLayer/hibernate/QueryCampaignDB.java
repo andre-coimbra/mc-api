@@ -13,6 +13,8 @@ import org.hibernate.Session;
 import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdgroup;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdvert;
@@ -27,12 +29,12 @@ public class QueryCampaignDB {
 	//SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	//Session session = sessionFactory.openSession();
 	
-	
+	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
 	@SuppressWarnings("finally")
 	public ca0 getCa0(String nrid, Session session)
 	{
-		ca0 dbca0 = null;
+		ca0 dbca0 = (ca0) context.getBean("ca0");
 		
 		System.out.println("------------------------------------------------------------");
 		System.out.println("[ca0] SESSION OPENED");
@@ -141,7 +143,9 @@ public class QueryCampaignDB {
 			  		Iterator<?> it = dbExtAdvertList.listIterator();
 				    while(it.hasNext()) 
 				    {
-				    	  ExtAdvert exadvert = (ExtAdvert) it.next();
+				    	  ExtAdvert exadvert = (ExtAdvert) context.getBean("extadvert");
+				    	  exadvert = (ExtAdvert) it.next();
+				    	  
 				    	  System.out.println("");
 		            	  System.out.println("ADVERT"+counter+" :");
 		            	  System.out.println("");
@@ -241,7 +245,8 @@ public class QueryCampaignDB {
 		            	  System.out.println("");
 		            	  System.out.println("ADGROUP"+counter+" :");
 		            	  System.out.println("");
-		            	  ExtAdgroup exadgroup = (ExtAdgroup) iterator.next(); 
+		            	  ExtAdgroup exadgroup = (ExtAdgroup) context.getBean("extadgroup");
+		            	  exadgroup = (ExtAdgroup) iterator.next();
 		            	  
 		            	  System.out.println("Adgroup ID: " + exadgroup.getAdgroup_id());
 						  System.out.println("Adgroup Name: " + exadgroup.getAdgroup_name());
@@ -306,7 +311,7 @@ public class QueryCampaignDB {
 	public ExtGeoloc getExtGeoloc(String nrid, Session session)
 	{
 		
-		ExtGeoloc dbExtGeoloc = null;
+		ExtGeoloc dbExtGeoloc = (ExtGeoloc) context.getBean("extgeoloc");
 		
 		
 		System.out.println("------------------------------------------------------------");
@@ -384,7 +389,7 @@ public class QueryCampaignDB {
 	public ExtBusinessPhone getExtBusinessPhone(String nrid, Session session)
 	{
 		
-		ExtBusinessPhone dbExtBusinessPhone = null;
+		ExtBusinessPhone dbExtBusinessPhone = (ExtBusinessPhone) context.getBean("extbusinessphone");
 		
 		
 		System.out.println("------------------------------------------------------------");
@@ -461,7 +466,7 @@ public class QueryCampaignDB {
 	public ExtBusinessAddress getExtBusinessAddress(String ca0_nrid, Session session)
 	{
 		
-		ExtBusinessAddress dbExtBusinessAddress = null;
+		ExtBusinessAddress dbExtBusinessAddress = (ExtBusinessAddress) context.getBean("extbusinessaddress");;
 		
 		
 		System.out.println("------------------------------------------------------------");

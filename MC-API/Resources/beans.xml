@@ -18,18 +18,22 @@
 	
 	<!-- pojo entities -->
 	<bean id="advertiser" class="pt.paginasamarelas.dataLayer.entities.Advertiser"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-<!-- 	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean>
-	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserId"></bean> -->
+	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserID"></bean>
+ 	<bean id="businessaddress" class="pt.paginasamarelas.dataLayer.entities.BusinessAddress"></bean>
+	<bean id="budget" class="pt.paginasamarelas.dataLayer.entities.Budget"></bean>
+	<bean id="location" class="pt.paginasamarelas.dataLayer.entities.Location"></bean>
+	<bean id="locationID" class="pt.paginasamarelas.dataLayer.entities.LocationId"></bean>
+	<bean id="geographictarget" class="pt.paginasamarelas.dataLayer.entities.GeographicTarget"></bean>
+	<bean id="categoryref" class="pt.paginasamarelas.dataLayer.entities.CategoryRef"></bean>
+	<bean id="customadcopy" class="pt.paginasamarelas.dataLayer.entities.CustomAdCopy"></bean>
+	<bean id="customkeyphrase" class="pt.paginasamarelas.dataLayer.entities.CustomKeyphrase"></bean> 
+	<bean id="postalcoderadius" class="pt.paginasamarelas.dataLayer.entities.PostalCodeRadius"></bean>
+	<bean id="sitelink" class="pt.paginasamarelas.dataLayer.entities.Sitelink"></bean>
+	
 	
 	<!-- pojo entities -->
 	
 	
 	<bean id="advertiserCreator" class="pt.paginasamarelas.logicLayer.operations.AdvertiserCreator"></bean>
+	<bean id="queryCampaignDB" class="pt.paginasamarelas.logicLayer.operations.QueryCampaignDB"></bean>
 </beans>

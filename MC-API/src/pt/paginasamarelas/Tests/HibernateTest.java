@@ -1,6 +1,8 @@
 package pt.paginasamarelas.Tests;
 
 import java.math.BigDecimal;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,7 +11,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import pt.paginasamarelas.dataLayer.entities.Advertiser;
 import pt.paginasamarelas.dataLayer.hibernate.HibernateUtil;
 import pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdgroup;
@@ -24,11 +29,15 @@ import pt.paginasamarelas.logicLayer.operations.AdvertiserCreator;
 public class HibernateTest {
 	
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws MalformedURLException, URISyntaxException
 	{
-		//AdvertiserCreator c = new AdvertiserCreator();
-		//c.createAdvertiser("13909005_3300955_158191");
-		getCampaign();
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		AdvertiserCreator c = (AdvertiserCreator) context.getBean("advertiserCreator");
+		Advertiser c2 = (Advertiser) context.getBean("advertiser");
+		c2 = c.createAdvertiser("13909005_3300955_158191");
+		String dummy = "";
+		//getCampaign();
 	}
 	
 	

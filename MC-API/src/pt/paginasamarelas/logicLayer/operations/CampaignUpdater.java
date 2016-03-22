@@ -6,10 +6,10 @@ import pt.paginasamarelas.dataLayer.entities.Campaign;
 public class CampaignUpdater {
 
 	
-		public void campaignUpdater(Campaign matchcraft, Campaign cmc)
+		public void campaignUpdater(Campaign matchcraftCampaign, Campaign cmcCampaign)
 		{
-			Advertiser matchcraftAdvertiser = matchcraft.getAdvertiser();
-			Advertiser cmcAdvertiser = cmc.getAdvertiser();
+			Advertiser matchcraftAdvertiser = matchcraftCampaign.getAdvertiser();
+			Advertiser cmcAdvertiser = cmcCampaign.getAdvertiser();
 			
 		}
 }

@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
 import pt.paginasamarelas.dataLayer.entities.Advertiser;
+import pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB;
 import pt.paginasamarelas.logicLayer.operations.AdvertiserCreator;
 
 public class BeanTest {
@@ -18,10 +19,8 @@ public class BeanTest {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		 
+		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		
-		
-		
-		//BeanFactory bean = new XmlBeanFactory(new FileSystemResource("beans.xml"));
 		Advertiser a = (Advertiser) context.getBean("advertiser");
 		AdvertiserCreator ac = (AdvertiserCreator) context.getBean("advertiserCreator");
 		

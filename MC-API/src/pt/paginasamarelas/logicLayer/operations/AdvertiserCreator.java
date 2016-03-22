@@ -21,11 +21,14 @@ import pt.paginasamarelas.dataLayer.hibernate.entities.*;
 public class AdvertiserCreator 
 {
 	
-	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
+	
+	private ApplicationContext context;
+	
+
 	public Advertiser createAdvertiser(String externalId) throws MalformedURLException, URISyntaxException
 	{
-		//Load data from DB
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = new QueryCampaignDB();
@@ -83,6 +86,7 @@ public class AdvertiserCreator
 	
 	public BusinessAddress createBusinessAddress(ExtBusinessAddress extbusinessaddress)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		if(extbusinessaddress != null)
 		{
 			BusinessAddress businessAddress = (BusinessAddress) context.getBean("businessaddress");
@@ -102,6 +106,8 @@ public class AdvertiserCreator
 	
 	public Budget[] createBudgets(ca0 ca0)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Budget budget = (Budget) context.getBean("budget");
 		if(ca0.getTargetRetailSpend() != null)
 			budget.setTargetRetailSpend(ca0.getTargetRetailSpend().floatValue());
@@ -142,7 +148,7 @@ public class AdvertiserCreator
 	
 	public Location[] createLocation(List<ExtAdvert> dbExtAdvertList) throws MalformedURLException, URISyntaxException
 	{
-		
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		
 		Location[] locations = new Location[dbExtAdvertList.size()];
 		
@@ -212,6 +218,8 @@ public class AdvertiserCreator
 	
 	public CategoryRef[] createCategoryRefs(String advertid)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		
@@ -246,6 +254,8 @@ public class AdvertiserCreator
 	
 	public CustomAdCopy[] createCustomAdcopies(String adgroupid)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> adcopies = q.getExtCustomAdcopyHQL(adgroupid, session);
@@ -277,6 +287,8 @@ public class AdvertiserCreator
 	
 	public CustomKeyphrase[] createCustomKeyphrase(String adgroupid)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> keyphrases = q.getExtCustomKeywordHQL(adgroupid, session);
@@ -306,6 +318,8 @@ public class AdvertiserCreator
 	
 	public GeographicTarget createGeoloc(String advertid)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> geolocs = q.getExtGeolocHQL(advertid, session);
@@ -343,6 +357,8 @@ public class AdvertiserCreator
 	
 	public Sitelink[] createSitelink(String advertid)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Session session = HibernateUtil.openSession();
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		List<?> extsitelinks = q.getExtSitelinkHQL(advertid, session);

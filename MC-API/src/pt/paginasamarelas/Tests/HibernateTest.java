@@ -67,13 +67,8 @@ public class HibernateTest {
 		q.getExtCustomAdcopyHQL("8883", session);
 		//q.getExtSitelinkHQL("7083559", session);
 		
-		
-		
-			
 	}
-	
-	
-	
+
 	//@Test
 	public void readClient() {
 		

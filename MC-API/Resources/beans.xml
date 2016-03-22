@@ -33,7 +33,9 @@
 	
 	<!-- pojo entities -->
 	
-	
+	<!-- operation classes -->
 	<bean id="advertiserCreator" class="pt.paginasamarelas.logicLayer.operations.AdvertiserCreator"></bean>
-	<bean id="queryCampaignDB" class="pt.paginasamarelas.logicLayer.operations.QueryCampaignDB"></bean>
+	<bean id="queryCampaignDB" class="pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB"></bean>
+	<!-- operation classes -->
+	
 </beans>

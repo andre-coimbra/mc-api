@@ -1,17 +1,12 @@
 package pt.paginasamarelas.dataLayer.hibernate;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.CriteriaSpecification;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,7 +15,6 @@ import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdgroup;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdvert;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessAddress;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessPhone;
-import pt.paginasamarelas.dataLayer.hibernate.entities.ExtCustomAdcopy;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ExtGeoloc;
 import pt.paginasamarelas.dataLayer.hibernate.entities.ca0;
 
@@ -29,11 +23,14 @@ public class QueryCampaignDB {
 	//SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	//Session session = sessionFactory.openSession();
 	
-	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
+	
+	private ApplicationContext context;
+
 	@SuppressWarnings("finally")
 	public ca0 getCa0(String nrid, Session session)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		ca0 dbca0 = (ca0) context.getBean("ca0");
 		
 		System.out.println("------------------------------------------------------------");
@@ -110,10 +107,10 @@ public class QueryCampaignDB {
 		
 	}
 	
-	@SuppressWarnings("finally")
+	@SuppressWarnings({ "finally", "unchecked" })
 	public List<ExtAdvert> getExAdvert(String nrid, Session session)
 	{
-		
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		//ExtAdvert dbExtAdvert = null;
 		List<ExtAdvert> dbExtAdvertList = null;
 		
@@ -215,11 +212,11 @@ public class QueryCampaignDB {
 		
 	}
 	
-	@SuppressWarnings("finally")
+	@SuppressWarnings({ "finally", "unchecked" })
 	public List<ExtAdgroup> getExAdgroup(String nrid, Session session)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		
-		ExtAdgroup dbExtAdgroup = null;
 		List<ExtAdgroup> dbExtAdgroupList = null;
 		
 		System.out.println("------------------------------------------------------------");
@@ -253,6 +250,7 @@ public class QueryCampaignDB {
 						  System.out.println("NRID: " + exadgroup.getCa0_nrid());
 						  System.out.println("Heading NRID: " + exadgroup.getHeading_nrid());
 		  			  	  counter++;
+		  			  	  
 		            }
 			  		session.getTransaction().commit();
 			  		System.out.println("-----------------");
@@ -310,6 +308,7 @@ public class QueryCampaignDB {
 	@SuppressWarnings("finally")
 	public ExtGeoloc getExtGeoloc(String nrid, Session session)
 	{
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		
 		ExtGeoloc dbExtGeoloc = (ExtGeoloc) context.getBean("extgeoloc");
 		
@@ -388,7 +387,7 @@ public class QueryCampaignDB {
 	@SuppressWarnings("finally")
 	public ExtBusinessPhone getExtBusinessPhone(String nrid, Session session)
 	{
-		
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		ExtBusinessPhone dbExtBusinessPhone = (ExtBusinessPhone) context.getBean("extbusinessphone");
 		
 		
@@ -465,7 +464,7 @@ public class QueryCampaignDB {
 	@SuppressWarnings("finally")
 	public ExtBusinessAddress getExtBusinessAddress(String ca0_nrid, Session session)
 	{
-		
+		context = new ClassPathXmlApplicationContext("beans.xml");
 		ExtBusinessAddress dbExtBusinessAddress = (ExtBusinessAddress) context.getBean("extbusinessaddress");;
 		
 		

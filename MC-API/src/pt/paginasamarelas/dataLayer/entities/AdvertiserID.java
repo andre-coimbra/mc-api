@@ -6,6 +6,8 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 public class AdvertiserID {
 	private int ripId;
 	private String externalId;
+	private Diagnostic[] diagnostics;
+	
 	/**
 	 * @return the ripId
 	 */
@@ -30,6 +32,12 @@ public class AdvertiserID {
 	 */
 	public void setExternalId(String externalId) {
 		this.externalId = externalId;
+	}
+	public Diagnostic[] getDiagnostics() {
+		return diagnostics;
+	}
+	public void setDiagnostics(Diagnostic[] diagnostics) {
+		this.diagnostics = diagnostics;
 	}
 
 }

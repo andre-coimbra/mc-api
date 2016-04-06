@@ -29,13 +29,29 @@
 	<bean id="customkeyphrase" class="pt.paginasamarelas.dataLayer.entities.CustomKeyphrase"></bean> 
 	<bean id="postalcoderadius" class="pt.paginasamarelas.dataLayer.entities.PostalCodeRadius"></bean>
 	<bean id="sitelink" class="pt.paginasamarelas.dataLayer.entities.Sitelink"></bean>
-	
-	
+	<bean id="request" class="pt.paginasamarelas.dataLayer.entities.Request"></bean>
+	<bean id="response" class="pt.paginasamarelas.dataLayer.entities.Response"></bean>
 	<!-- pojo entities -->
 	
-	<!-- operation classes -->
+	<!-- hibernate operation classes -->
 	<bean id="advertiserCreator" class="pt.paginasamarelas.logicLayer.operations.AdvertiserCreator"></bean>
 	<bean id="queryCampaignDB" class="pt.paginasamarelas.dataLayer.hibernate.QueryCampaignDB"></bean>
-	<!-- operation classes -->
+	<!-- hibernate operation classes -->
+	
+	<!-- controllers -->
+	<bean id="readcampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.ReadCampaignController"></bean>
+	<bean id="updatecampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.UpdateCampaignController"></bean>
+	<bean id="createcampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.CreateCampaignController"></bean>
+	<bean id="deletecampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.DeleteCampaignController"></bean>
+	<!-- controllers -->
+	
+	<!-- operations -->
+	<bean id="requestbuilder" class="pt.paginasamarelas.logicLayer.operations.RequestBuilder"></bean>
+	<bean id="jacksonConverter" class="pt.paginasamarelas.logicLayer.operations.JacksonConverter"></bean>
+	<!-- operations -->
+	
+	<!-- REST service -->
+	<bean id="rest" class="pt.paginasamarelas.logicLayer.RESTRequester.RESTRequestService"></bean>
+	<!-- REST service -->
 	
 </beans>

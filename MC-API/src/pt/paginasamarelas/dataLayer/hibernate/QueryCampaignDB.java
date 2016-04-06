@@ -652,11 +652,9 @@ public class QueryCampaignDB {
 	public List<?> getNewAdvertisersHQL(Session session)
 	{
 		
-		String queryString = "SELECT b.sl_name, b.requested_url "
-				+ "FROM ca0 a"
-				+ "WHERE a.heading_nrid = b.heading_nrid AND a.ca0_nrid = b.ca0_nrid "
-				+ "AND a.template IS NULL "
-				+ "AND b.template IS NULL ";
+		String queryString = "SELECT externalId, status"
+				+ " FROM ca0"
+				+ " WHERE CONVERT(VARCHAR(8), dmod, 112) = CONVERT(VARCHAR(8), GETDATE(), 112) AND var3 IS NOT NULL ";
 		
 		
 		Query query = session.createQuery(queryString);

@@ -14,10 +14,10 @@ import pt.paginasamarelas.logicLayer.operations.PropertiesReader;
 
 public class RESTRequestService {
 	
-	public void makeRequest(Request request) throws IOException {
+	public String makeRequest(Request request) throws IOException {
 		
 			PropertiesReader props = new PropertiesReader();
-		
+			StringBuffer response = new StringBuffer();
 	        try
 	        {
 	 
@@ -61,7 +61,7 @@ public class RESTRequestService {
 		        BufferedReader in = new BufferedReader(
 		                    new InputStreamReader(conn.getInputStream()));
 		        String inputLine;
-		        StringBuffer response = new StringBuffer();
+		        
 		 
 		        while ((inputLine = in.readLine()) != null) 
 		        {
@@ -77,9 +77,9 @@ public class RESTRequestService {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
+	        
+	        return response.toString();
 	    }
 		
 
-	
-	
 }

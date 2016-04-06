@@ -32,12 +32,12 @@ public class HibernateTest {
 	public static void main(String[] args) throws MalformedURLException, URISyntaxException
 	{
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		/*ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		AdvertiserCreator c = (AdvertiserCreator) context.getBean("advertiserCreator");
 		Advertiser c2 = (Advertiser) context.getBean("advertiser");
 		c2 = c.createAdvertiser("13909005_3300955_158191");
-		String dummy = "";
-		//getCampaign();
+		String dummy = "";*/
+		getCampaign();
 	}
 	
 	
@@ -64,8 +64,9 @@ public class HibernateTest {
 		//q.getExtCustomAdgroupHQL("7083559", session);
 		//q.getExtGeolocHQL("7083559", session);
 		//q.getExtGeolocHQL("7083559", session);
-		q.getExtCustomAdcopyHQL("8883", session);
+		//q.getExtCustomAdcopyHQL("8883", session);
 		//q.getExtSitelinkHQL("7083559", session);
+		q.getNewAdvertisersHQL(session);
 		
 	}
 

@@ -19,6 +19,7 @@ public class ca0 {
 	private BigDecimal targetMediaSpend;
 	private BigDecimal targetClicks;
 	private BigDecimal targetImpressions;
+	private String status;
 	
 	
 	
@@ -83,6 +84,12 @@ public class ca0 {
 	}
 	public void setTargetImpressions(BigDecimal targetImpressions) {
 		this.targetImpressions = targetImpressions;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

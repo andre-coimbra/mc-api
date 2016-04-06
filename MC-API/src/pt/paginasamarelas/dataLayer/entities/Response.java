@@ -2,7 +2,7 @@ package pt.paginasamarelas.dataLayer.entities;
 
 public class Response {
 	private String requestUuid;
-	private Operations operations;
+	private Operations[] operations;
 	
 	public String getRequestUuid() {
 		return requestUuid;
@@ -10,10 +10,10 @@ public class Response {
 	public void setRequestUuid(String requestUuid) {
 		this.requestUuid = requestUuid;
 	}
-	public Operations getOperations() {
+	public Operations[] getOperations() {
 		return operations;
 	}
-	public void setOperations(Operations operations) {
+	public void setOperations(Operations[] operations) {
 		this.operations = operations;
 	}
 }

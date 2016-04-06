@@ -18,6 +18,7 @@
         <property name="targetMediaSpend"  column="num15"/>
         <property name="targetClicks"  column="num37"/>
         <property name="targetImpressions"  column="num47"/>
+        <property name="status"  column="var12"/>
         
     </class>
     

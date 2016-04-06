@@ -5,8 +5,10 @@ public class Operations {
 	private Operand operands;
 	private String operationUuid;
 	private Advertiser result;
+	private Diagnostic[] diagnostics;
 	
 	
+
 	public enum OperatorEnum
 	{
 		readAdvertiser,
@@ -55,6 +57,15 @@ public class Operations {
 
 	public void setResult(Advertiser result) {
 		this.result = result;
+	}
+	
+	public Diagnostic[] getDiagnostics() {
+		return diagnostics;
+	}
+
+
+	public void setDiagnostics(Diagnostic[] diagnostics) {
+		this.diagnostics = diagnostics;
 	}
 
 

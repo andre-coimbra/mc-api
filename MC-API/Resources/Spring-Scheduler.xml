@@ -13,7 +13,8 @@
  	
  	<task:scheduler id="myScheduler" pool-size="10" />
     <task:scheduled-tasks scheduler="myScheduler">
-       <task:scheduled ref="runScheduler" method="decider" cron="0 56 17 * * *" />
+    	<!-- executa as 17:56 de todos os dias  -->
+       <task:scheduled ref="runScheduler" method="decider" cron="0 46 * * * *" />
     </task:scheduled-tasks>
  
     

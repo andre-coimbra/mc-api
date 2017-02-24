@@ -4,7 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+//import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
@@ -18,14 +18,17 @@ public class BeanTest {
 	public static void main(String[] args) throws MalformedURLException, URISyntaxException {
 		// TODO Auto-generated method stub
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		boolean swCampanhaGAespecial = false;
+		boolean swIncludeStdAdcopies = false;
 		 
 		QueryCampaignDB q = (QueryCampaignDB) context.getBean("queryCampaignDB");
 		
 		Advertiser a = (Advertiser) context.getBean("advertiser");
 		AdvertiserCreator ac = (AdvertiserCreator) context.getBean("advertiserCreator");
 		
-		a = ac.createAdvertiser("13909005_3300955_158191");
+		a = ac.createAdvertiser("13909005_3300955_158191", swCampanhaGAespecial, swIncludeStdAdcopies);
 		String dummy="";
+    	System.exit(0);
 	}
 
 }

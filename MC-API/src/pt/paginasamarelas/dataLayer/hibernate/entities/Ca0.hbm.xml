@@ -10,7 +10,6 @@
         </id>
         
         <property name="nrid" column="nrid"/>
-        <property name="name" column="var3"/>
         <property name="startDate" column="begin_date"/>
         <property name="endDate" column="end_date"/>
         <property name="networks" column="var9"/>
@@ -19,6 +18,13 @@
         <property name="targetClicks"  column="num37"/>
         <property name="targetImpressions"  column="num47"/>
         <property name="status"  column="var12"/>
+        <property name="var2"  column="var2"/>
+        <property name="var3"  column="var3"/>
+        <property name="var6"  column="var6"/>
+        <property name="var23"  column="var23"/>
+        <property name="num8"  column="num8"/>
+        <property name="intfDate" column="dat4"/>
+        <property name="dmod" column="dmod"/>
         
     </class>
     

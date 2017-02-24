@@ -11,12 +11,14 @@
       com.microsoft.sqlserver.jdbc.SQLServerDriver
    </property>
 
+	<!--  TESTE  -->
    <property name="hibernate.connection.url">jdbc:sqlserver://10.92.205.202;databaseName=CMC_PT</property>
-   <property name="hibernate.connection.username">viewPA</property>
-   <property name="hibernate.connection.password">Amarelas</property>
+	<!--  PROD  -->
+   <!--   property name="hibernate.connection.url">jdbc:sqlserver://10.166.100.22;databaseName=CMC_PT</property -->
+   <property name="hibernate.connection.username">batchUpdPA</property>
+   <property name="hibernate.connection.password">Amarelas!2016</property>
    <!-- <property name="connection.pool_size">20</property> -->
-   <property name="show_sql">true</property>
-   
+   <property name="show_sql">true</property>   
    
   <property name="hibernate.c3p0.min_size">5</property>
   <property name="hibernate.c3p0.max_size">20</property>
@@ -24,21 +26,28 @@
   <property name="hibernate.c3p0.max_statements">50</property>
   <property name="hibernate.c3p0.idle_test_period">1000</property>
    
-  
 	
    <!-- List of XML mapping files -->
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ad_Copy.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ad_Group.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ad_Group_Heading_Name.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ad_Group_Keyword.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Ca0.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Dual.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtBusinessAddress.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtBusinessPhone.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtAdvert.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtAdgroup.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtGeoloc.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtHeading.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtLinkedKeyword.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtCustomKeyword.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtLinkedAdcopy.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtCustomAdcopy.hbm.xml"></mapping>
    <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/ExtSitelink.hbm.xml"></mapping>
-   
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Kwac_Adg_Adcopy_V.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Kwac_Adg_Keyword_V.hbm.xml"></mapping>
+   <mapping resource="pt/paginasamarelas/dataLayer/hibernate/entities/Parameters.hbm.xml"></mapping>   
 
 </session-factory>
 </hibernate-configuration>

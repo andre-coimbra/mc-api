@@ -38,6 +38,8 @@ public class BusinessAddress {
 		this.postalCode = postalCode;
 	}
 	public String getCountryCode() {
+		if (this.countryCode==null)
+			this.countryCode="PT";
 		return countryCode;
 	}
 	public void setCountryCode(String countryCode) {

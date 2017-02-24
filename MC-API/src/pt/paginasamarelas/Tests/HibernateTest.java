@@ -45,6 +45,7 @@ public class HibernateTest {
 	public static void getCampaign()
 	{
 		Session session = HibernateUtil.openSession();
+		boolean normalRun = true;
 		
 		QueryCampaignDB q = new QueryCampaignDB();
 		
@@ -66,7 +67,7 @@ public class HibernateTest {
 		//q.getExtGeolocHQL("7083559", session);
 		//q.getExtCustomAdcopyHQL("8883", session);
 		//q.getExtSitelinkHQL("7083559", session);
-		q.getNewAdvertisersHQL(session);
+		q.getNewAdvertisersHQL(session, normalRun);
 		
 	}
 
@@ -86,7 +87,7 @@ public class HibernateTest {
 
 			  	ca0 dbCa0 = (ca0) session.get(ca0.class, "46056693_3207463_126332");
 			
-			  	System.out.println(dbCa0.getExternalId() + " - " + dbCa0.getName());
+			  	System.out.println(dbCa0.getExternalId() + " - " + dbCa0.getVar3());
 			
 			  	session.getTransaction().commit();
 			  	
@@ -142,7 +143,7 @@ public class HibernateTest {
 		         for (Iterator<?> iterator1 = Ca0s.iterator(); iterator1.hasNext();){
 		            ca0 Ca0 = (ca0) iterator1.next(); 
 		            System.out.println("ExternalId: " + Ca0.getExternalId());
-				  	System.out.println("Name: " + Ca0.getName());
+				  	System.out.println("Name: " + Ca0.getVar3());
 				  	System.out.println("Network: " + Ca0.getNetworks());
 				  	System.out.println("Target Retail Spend: " + Ca0.getTargetRetailSpend());
 				  	System.out.println("Start date: " + Ca0.getStartDate());
@@ -153,7 +154,7 @@ public class HibernateTest {
 		            System.out.println("");
 		    		System.out.println("ADGROUPS");
 		    		System.out.println("------------------------------------------------------------");
-		    		int counter=1;
+/*		    		int counter=1;
 		            for (Iterator<?> iterator2 = adgroups.iterator(); iterator2.hasNext();){
 		            	  System.out.println("");
 		            	  System.out.println("ADGROUP"+counter+" :");
@@ -164,6 +165,7 @@ public class HibernateTest {
 		  			  	  System.out.println("NRID: " + adgroup.getCa0_nrid());
 		  			  	  counter++;
 		            }
+*/
 		            System.out.println("------------------------------------------------------------");
 		         }
 		         session.getTransaction().commit();

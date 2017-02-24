@@ -1,6 +1,7 @@
 package pt.paginasamarelas.dataLayer.hibernate.entities;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class ExtAdvert {
 	
@@ -10,8 +11,9 @@ public class ExtAdvert {
 	private String campaignUrl;
 	private String displayUrl;
 	private String heading_nrid;
+	private String documentId;
 	private Integer template;
-	
+	private Timestamp dmod;
 	
 	
 	public BigDecimal getAdvert_id() {
@@ -50,15 +52,24 @@ public class ExtAdvert {
 	public void setHeading_nrid(String heading_nrid) {
 		this.heading_nrid = heading_nrid;
 	}
+	public String getDocumentId() {
+		return documentId;
+	}
+	public void setDocumentId(String documentId) {
+		this.documentId = documentId;
+	}
 	public Integer getTemplate() {
 		return template;
 	}
 	public void setTemplate(Integer template) {
 		this.template = template;
 	}
-	
-	
-	
+	public Timestamp getDmod() {
+		return dmod;
+	}
+	public void setDmod(Timestamp dmod) {
+		this.dmod = dmod;
+	}	
 	
 
 }

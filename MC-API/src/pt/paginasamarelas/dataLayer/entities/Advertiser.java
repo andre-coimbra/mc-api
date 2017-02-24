@@ -1,11 +1,17 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Advertiser {
 	
 	private AdvertiserID advertiserId;
 	private String name;
 	private String userStatus;
+	private int accountId;
 	private String googleProvisioningId;
 	private Contact contact;
 	private BusinessAddress businessAddress;
@@ -41,6 +47,12 @@ public class Advertiser {
 	}
 	public void setUserStatus(String userStatus) {
 		this.userStatus = userStatus;
+	}
+	public int getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 	public String getGoogleProvisioningId() {
 		return googleProvisioningId;
@@ -142,11 +154,6 @@ public class Advertiser {
 	public void setLocations(Location[] locations) {
 		this.locations = locations;
 	}
-	
-	
-	
-	
-	
 	
 	
 	

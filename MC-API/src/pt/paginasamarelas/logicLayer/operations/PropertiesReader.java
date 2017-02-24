@@ -12,8 +12,15 @@ public class PropertiesReader {
 	public PropertiesReader() throws IOException
 	{
 		InputStream input;
+		String workingDir = System.getProperty("user.dir");
 		Properties prop = new Properties();
-		input = new FileInputStream("resources/config.properties");
+//		System.out.println("[PropertiesReader] workingDir:" + workingDir + "\n");
+		if (workingDir.equals("c:\\TEMP") || workingDir.substring(0, 8).equals("C:\\DOCUM")) {
+			input = new FileInputStream("\\\\ciclope\\dossr_desenv\\MC_API\\Exe\\resources\\config.properties");
+		} else {
+			input = new FileInputStream(".\\resources\\config.properties");
+		}
+
 		prop.load(input);
 		
 		setUser(prop.getProperty(Property.user.toString()));

@@ -7,6 +7,7 @@ public class ExtLinkedKeyword {
 	private BigDecimal nrid;
 	private BigDecimal keyword_nrid;
 	private BigDecimal adgroup_nrid;
+	private Integer template;
 	
 	public BigDecimal getNrid() {
 		return nrid;
@@ -26,4 +27,11 @@ public class ExtLinkedKeyword {
 	public void setAdgroup_nrid(BigDecimal adgroup_nrid) {
 		this.adgroup_nrid = adgroup_nrid;
 	}
+	public Integer getTemplate() {
+		return template;
+	}
+	public void setTemplate(Integer template) {
+		this.template = template;
+	}
+
 }

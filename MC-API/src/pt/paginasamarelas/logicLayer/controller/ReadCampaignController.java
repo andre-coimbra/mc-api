@@ -28,7 +28,6 @@ public class ReadCampaignController
 		String response = rest.makeRequest(matchcraftRequest);
 		
 		
-		
 		return response;
 		
 	}

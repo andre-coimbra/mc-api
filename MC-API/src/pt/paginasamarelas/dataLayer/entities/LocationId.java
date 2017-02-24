@@ -1,5 +1,8 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
 public class LocationId {
 	
 	private int ripId;

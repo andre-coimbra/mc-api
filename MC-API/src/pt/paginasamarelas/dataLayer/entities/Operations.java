@@ -5,17 +5,16 @@ public class Operations {
 	private Operand operands;
 	private String operationUuid;
 	private Advertiser result;
-	private Diagnostic[] diagnostics;
-	
-	
+	private Diagnostic[] diagnostics;	
 
 	public enum OperatorEnum
 	{
 		readAdvertiser,
 		createAdvertiser,
 		updateAdvertiser,
-		deleteAdvertiser
-		
+		deleteAdvertiser,
+		getSuggestedGeoModifiers,
+		getTaxonomyReport
 	}
 
 
@@ -53,8 +52,6 @@ public class Operations {
 	public Advertiser getResult() {
 		return result;
 	}
-
-
 	public void setResult(Advertiser result) {
 		this.result = result;
 	}
@@ -67,9 +64,6 @@ public class Operations {
 	public void setDiagnostics(Diagnostic[] diagnostics) {
 		this.diagnostics = diagnostics;
 	}
-
-
-	
 
 }
 

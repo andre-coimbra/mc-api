@@ -1,7 +1,12 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+
 public class CustomAdCopy {
 	private String title;
+	private String title2;
 	private String line1;
 	private String line2;
 	private boolean suppressKeywordInsertion;
@@ -14,6 +19,12 @@ public class CustomAdCopy {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getTitle2() {
+		return title2;
+	}
+	public void setTitle2(String title2) {
+		this.title2 = title2;
 	}
 	public String getLine1() {
 		return line1;

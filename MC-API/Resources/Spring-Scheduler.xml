@@ -13,8 +13,9 @@
  	
  	<task:scheduler id="myScheduler" pool-size="10" />
     <task:scheduled-tasks scheduler="myScheduler">
-    	<!-- executa as 17:56 de todos os dias  -->
-       <task:scheduled ref="runScheduler" method="decider" cron="0 46 * * * *" />
+    	<!-- 0 0/10 * * * * == executa todos os 10 mins    (0 56 17 == as 17:56 de todos os dias)  -->
+    	<!-- executa a todas as horas das 8:00 as 20:00(as xx:00 de todos os dias, excepto Sábado)  -->
+       <task:scheduled ref="runScheduler" method="decider" cron="0 0 8-22 * * SUN-FRI" />
     </task:scheduled-tasks>
  
     

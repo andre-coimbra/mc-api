@@ -1,6 +1,10 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Location {
 	
@@ -10,16 +14,21 @@ public class Location {
 	private String url;
 	private String requestedDisplayUrl;
 	private String[] languages;
+	private String[] networks;
 	private float googleMobileBidFactor;
 	private CategoryRef[] categoryRefs;
 	private GeographicTarget geographicTarget;
 	private GeoKeywordTarget geoKeywordTarget;
 	private Sitelink[] sitelinks;
 	private AdSchedule adSchedule;
-	private boolean useProfilePage;
+/*	private boolean useProfilePage;
 	private LandingPageProfile landingPageProfile;
-	
-	
+*/
+	private CustomCategory[] customCategories;
+	private Callout[] callouts;
+	private boolean suppressUrlCheck;
+	private float budgetPreference;
+		
 	public LocationId getLocationId() {
 		return locationId;
 	}
@@ -56,6 +65,12 @@ public class Location {
 	public void setLanguages(String[] languages) {
 		this.languages = languages;
 	}
+	public String[] getNetworks() {
+		return networks;
+	}
+	public void setNetworks(String[] networks) {
+		this.networks = networks;
+	}
 	public float getGoogleMobileBidFactor() {
 		return googleMobileBidFactor;
 	}
@@ -87,7 +102,7 @@ public class Location {
 	public void setAdSchedule(AdSchedule adSchedule) {
 		this.adSchedule = adSchedule;
 	}
-	public boolean isUseProfilePage() {
+/* FM 02.08.2016	public boolean isUseProfilePage() {
 		return useProfilePage;
 	}
 	public void setUseProfilePage(boolean useProfilePage) {
@@ -99,11 +114,36 @@ public class Location {
 	public void setLandingPageProfile(LandingPageProfile landingPageProfile) {
 		this.landingPageProfile = landingPageProfile;
 	}
+	*/
 	public Sitelink[] getSitelinks() {
 		return sitelinks;
 	}
 	public void setSitelinks(Sitelink[] sitelinks) {
 		this.sitelinks = sitelinks;
 	}
-	
+	public CustomCategory[] getCustomCategories() {
+		return customCategories;
+	}
+	public void setCustomCategories(CustomCategory[] customCategories) {
+		this.customCategories = customCategories;
+	}
+	public Callout[] getCallouts() {
+		return callouts;
+	}
+	public void setCallouts(Callout[] callouts) {
+		this.callouts = callouts;
+	}
+	public boolean isSuppressUrlCheck() {
+		return suppressUrlCheck;
+	}
+	public void setSuppressUrlCheck(boolean pSuppressUrlCheck) {
+		this.suppressUrlCheck = pSuppressUrlCheck;
+	}	
+// FM 15.02.2017
+	public float getBudgetPreference() {
+		return budgetPreference;
+	}
+	public void setBudgetPreference(float pBudgetPreference) {
+		this.budgetPreference = pBudgetPreference;
+	}
 }

@@ -4,13 +4,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- hibernate entities -->
+	<bean id="ad_copy" class="pt.paginasamarelas.dataLayer.hibernate.entities.Ad_Copy"></bean>
+	<bean id="ad_group" class="pt.paginasamarelas.dataLayer.hibernate.entities.Ad_Group"></bean>
+	<bean id="ad_group_keyword" class="pt.paginasamarelas.dataLayer.hibernate.entities.Ad_Group_Keyword"></bean>
 	<bean id="ca0" class="pt.paginasamarelas.dataLayer.hibernate.entities.ca0"></bean>
+	<bean id="dual" class="pt.paginasamarelas.dataLayer.hibernate.entities.dual"></bean>
 	<bean id="extadvert" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtAdvert"></bean>
 	<bean id="extbusinessaddress" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessAddress"></bean>
 	<bean id="extbusinessphone" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtBusinessPhone"></bean>
 	<bean id="extcustomadcopy" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtCustomAdcopy"></bean>
 	<bean id="extcustomkeyword" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtCustomKeyword"></bean>
 	<bean id="extgeoloc" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtGeoloc"></bean>
+	<bean id="extheading" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtHeading"></bean>
 	<bean id="extlinkedadcopy" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtLinkedAdcopy"></bean>
 	<bean id="extlinkedkeyword" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtLinkedKeyword"></bean>
 	<bean id="extSitelink" class="pt.paginasamarelas.dataLayer.hibernate.entities.ExtSitelink"></bean>
@@ -21,16 +26,24 @@
 	<bean id="advertiserID" class="pt.paginasamarelas.dataLayer.entities.AdvertiserID"></bean>
  	<bean id="businessaddress" class="pt.paginasamarelas.dataLayer.entities.BusinessAddress"></bean>
 	<bean id="budget" class="pt.paginasamarelas.dataLayer.entities.Budget"></bean>
+	<bean id="callout" class="pt.paginasamarelas.dataLayer.entities.Callout"></bean>
 	<bean id="location" class="pt.paginasamarelas.dataLayer.entities.Location"></bean>
 	<bean id="locationID" class="pt.paginasamarelas.dataLayer.entities.LocationId"></bean>
 	<bean id="geographictarget" class="pt.paginasamarelas.dataLayer.entities.GeographicTarget"></bean>
+	<bean id="geokeywordtarget" class="pt.paginasamarelas.dataLayer.entities.GeoKeywordTarget"></bean>
 	<bean id="categoryref" class="pt.paginasamarelas.dataLayer.entities.CategoryRef"></bean>
 	<bean id="customadcopy" class="pt.paginasamarelas.dataLayer.entities.CustomAdCopy"></bean>
+	<bean id="customcategory" class="pt.paginasamarelas.dataLayer.entities.CustomCategory"></bean> 
 	<bean id="customkeyphrase" class="pt.paginasamarelas.dataLayer.entities.CustomKeyphrase"></bean> 
+	<bean id="keyphrase" class="pt.paginasamarelas.dataLayer.entities.Keyphrase"></bean> 
+	<bean id="payloadcategory" class="pt.paginasamarelas.dataLayer.entities.PayloadCategory"></bean> 
+	<bean id="pointradius" class="pt.paginasamarelas.dataLayer.entities.PointRadius"></bean>
 	<bean id="postalcoderadius" class="pt.paginasamarelas.dataLayer.entities.PostalCodeRadius"></bean>
 	<bean id="sitelink" class="pt.paginasamarelas.dataLayer.entities.Sitelink"></bean>
 	<bean id="request" class="pt.paginasamarelas.dataLayer.entities.Request"></bean>
 	<bean id="response" class="pt.paginasamarelas.dataLayer.entities.Response"></bean>
+	<bean id="response2" class="pt.paginasamarelas.dataLayer.entities.Response2"></bean>
+	<bean id="response3" class="pt.paginasamarelas.dataLayer.entities.Response3"></bean>
 	<!-- pojo entities -->
 	
 	<!-- hibernate operation classes -->
@@ -43,6 +56,7 @@
 	<bean id="updatecampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.UpdateCampaignController"></bean>
 	<bean id="createcampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.CreateCampaignController"></bean>
 	<bean id="deletecampaigncontroller" class="pt.paginasamarelas.logicLayer.controller.DeleteCampaignController"></bean>
+	<bean id="readadgroupscontroller" class="pt.paginasamarelas.logicLayer.controller.ReadAdgroupsController"></bean>
 	<!-- controllers -->
 	
 	<!-- operations -->

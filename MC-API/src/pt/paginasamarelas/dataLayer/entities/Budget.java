@@ -1,5 +1,9 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+
 public class Budget {
 	
 	private int contractBeginDate;
@@ -11,7 +15,7 @@ public class Budget {
 	private int targetClicks;
 	private int targetImpressions;
 	private boolean suppressRolloverAndExtension;
-	
+	private Diagnostic[] diagnostics;	
 	
 	public int getContractBeginDate() {
 		return contractBeginDate;
@@ -66,6 +70,12 @@ public class Budget {
 	}
 	public void setSuppressRolloverAndExtension(boolean suppressRolloverAndExtension) {
 		this.suppressRolloverAndExtension = suppressRolloverAndExtension;
+	}
+	public Diagnostic[] getDiagnostics() {
+		return diagnostics;
+	}
+	public void setDiagnostics(Diagnostic[] diagnostics) {
+		this.diagnostics = diagnostics;
 	}
 
 }

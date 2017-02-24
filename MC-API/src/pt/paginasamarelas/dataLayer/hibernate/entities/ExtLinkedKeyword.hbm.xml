@@ -11,6 +11,7 @@
         
         <property name="adgroup_nrid" column="adgroup_nrid"/>
         <property name="keyword_nrid" column="keyword_nrid"/>
+        <property name="template" column="template"/>
        
     </class>
 

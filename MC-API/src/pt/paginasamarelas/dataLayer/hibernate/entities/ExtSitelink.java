@@ -1,6 +1,7 @@
 package pt.paginasamarelas.dataLayer.hibernate.entities;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class ExtSitelink {
 	
@@ -10,8 +11,7 @@ public class ExtSitelink {
 	private String requested_url;
 	private Integer template;
 	private BigDecimal heading_nrid;
-	
-	
+	private Timestamp dmod;	
 	
 	public BigDecimal getCa0_nrid() {
 		return ca0_nrid;
@@ -49,5 +49,11 @@ public class ExtSitelink {
 	public void setHeading_nrid(BigDecimal heading_nrid) {
 		this.heading_nrid = heading_nrid;
 	}
+	public Timestamp getDmod() {
+		return dmod;
+	}
+	public void setDmod(Timestamp dmod) {
+		this.dmod = dmod;
+	}	
 	
 }

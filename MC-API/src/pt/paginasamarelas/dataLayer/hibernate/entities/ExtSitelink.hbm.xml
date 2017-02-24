@@ -13,6 +13,7 @@
         <property name="requested_url" column="requested_url"/>
         <property name="template" column="template"/>
         <property name="heading_nrid" column="heading_nrid"/>
+        <property name="dmod" column="dmod"/>
         
     </class>
 

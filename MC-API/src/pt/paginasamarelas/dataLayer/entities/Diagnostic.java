@@ -1,5 +1,9 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+
 public class Diagnostic {
 	
 	private String type;
@@ -7,6 +11,7 @@ public class Diagnostic {
 	private String code;
 	private String message;
 	private String[] path;
+	private String stacktrace;
 	
 	
 	
@@ -40,7 +45,12 @@ public class Diagnostic {
 	public void setPath(String[] path) {
 		this.path = path;
 	}
-	
+	public String getStacktrace() {
+		return stacktrace;
+	}
+	public void setStacktrace(String pStacktrace) {
+		this.stacktrace = pStacktrace;
+	}
 	
 
 }

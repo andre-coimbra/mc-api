@@ -8,6 +8,7 @@ public class ExtLinkedAdcopy {
 	private BigDecimal ca0_nrid;
 	private BigDecimal adcopy_nrid;
 	private BigDecimal adgroup_nrid;
+	private Integer template;
 	
 	
 	public BigDecimal getNrid() {
@@ -33,6 +34,12 @@ public class ExtLinkedAdcopy {
 	}
 	public void setAdgroup_nrid(BigDecimal adgroup_nrid) {
 		this.adgroup_nrid = adgroup_nrid;
+	}
+	public Integer getTemplate() {
+		return template;
+	}
+	public void setTemplate(Integer template) {
+		this.template = template;
 	}
 
 }

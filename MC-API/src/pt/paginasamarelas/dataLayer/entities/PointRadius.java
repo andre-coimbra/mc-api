@@ -1,5 +1,11 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class PointRadius {
 	
 	private float latitude;

@@ -9,7 +9,12 @@
             <generator class="native"/>
         </id>
         <property name="id" column="id"/>
+        <property name="ca0_nrid" column="ca0_nrid"/>
+        <property name="heading_nrid" column="heading_nrid"/>
         <property name="keyword" column="keyword"/>
+        <property name="disapproved" column="disapproved"/>
+        <property name="template" column="template"/>
+        <property name="dmod" column="dmod"/>
        
     </class>
 

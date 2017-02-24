@@ -9,9 +9,16 @@
             <generator class="native"/>
         </id>
         <property name="ca0_nrid" column="ca0_nrid"/>
+        <property name="heading_nrid" column="heading_nrid"/>
         <property name="title" column="title"/>
         <property name="line1" column="line1"/>
         <property name="line2" column="line2"/>
+        <property name="title1" column="title1"/>
+        <property name="title2" column="title2"/>
+        <property name="description" column="description"/>
+        <property name="disapproved" column="disapproved"/>
+        <property name="template" column="template"/>
+        <property name="dmod" column="dmod"/>
        
     </class>
 

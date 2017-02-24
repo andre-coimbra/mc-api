@@ -13,6 +13,8 @@
         <property name="line2" column="line2"/>
         <property name="postalCode" column="postal_code"/>
         <property name="region"  column="region"/>
+        <property name="template" column="template"/>
+        <property name="dmod" column="dmod"/>
     </class>
 
 </hibernate-mapping>

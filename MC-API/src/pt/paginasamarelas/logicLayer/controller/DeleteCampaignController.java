@@ -14,6 +14,8 @@ public class DeleteCampaignController {
 	private ApplicationContext context;
 	public String deleteMatchcraftCampaign(String external_id) throws IOException
 	{
+		String response = null;
+
 		context = new ClassPathXmlApplicationContext("beans.xml");
 		//Instanciate RequestBuilder, Request and RESTRequestService obj
 		RequestBuilder requestbuilder = (RequestBuilder) context.getBean("requestbuilder");
@@ -21,13 +23,14 @@ public class DeleteCampaignController {
 		Request matchcraftRequest = (Request) context.getBean("request");
 		
 		
-		//Build read request with external_id campaign
+		//Build delete request with external_id campaign
 		matchcraftRequest = requestbuilder.deleteRequest(external_id);
 		
 		//Send the request to matchcraft API and get the response
-		String response = rest.makeRequest(matchcraftRequest);
+		response = rest.makeRequest(matchcraftRequest);
+		System.out.println("[DelCamp] now call makeRequest\n");
 		
-		return null;
+		return response;
 	}
 
 }

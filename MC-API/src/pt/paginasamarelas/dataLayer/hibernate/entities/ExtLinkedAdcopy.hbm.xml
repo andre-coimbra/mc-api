@@ -11,6 +11,7 @@
         <property name="ca0_nrid" column="ca0_nrid"/>
         <property name="adgroup_nrid" column="adgroup_nrid"/>
         <property name="adcopy_nrid" column="adcopy_nrid"/>
+        <property name="template" column="template"/>
        
     </class>
 

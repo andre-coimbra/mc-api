@@ -59,7 +59,8 @@ public class RESTRequestService {
 		        System.out.println("Response Code : " + responseCode);
 		 
 		        BufferedReader in = new BufferedReader(
-		                    new InputStreamReader(conn.getInputStream()));
+		                    new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			     // FM 19.05.2016 ------------------------------------------ ^
 		        String inputLine;
 		        
 		 
@@ -70,8 +71,13 @@ public class RESTRequestService {
 		        in.close();
 		 
 		        // 7. Print result
-		        System.out.println(response.toString());
-		 
+		        System.out.println("Response length:" + response.toString().length());
+		        if (response.toString().length()>100001) {
+			        System.out.println(response.toString().substring(0,100000));
+		        }
+			    else {
+			        System.out.println(response.toString());
+			    }		 
 	        } catch (MalformedURLException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {

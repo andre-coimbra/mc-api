@@ -1,6 +1,7 @@
 package pt.paginasamarelas.dataLayer.hibernate.entities;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class ExtBusinessAddress {
 	
@@ -10,7 +11,9 @@ public class ExtBusinessAddress {
 	private String postalCode;
 	private String city;
 	private String region;
-	
+//	private String countryCode;
+	private Integer template;
+	private Timestamp dmod;
 	
 	public BigDecimal getCaNrid() {
 		return caNrid;
@@ -49,7 +52,24 @@ public class ExtBusinessAddress {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
-	
+	public Integer getTemplate() {
+		return template;
+	}
+	public void setTemplate(Integer template) {
+		this.template = template;
+	}
+	public Timestamp getDmod() {
+		return dmod;
+	}
+	public void setDmod(Timestamp dmod) {
+		this.dmod = dmod;
+	}	
+/*	public String getCountryCode() {
+		return countryCode;
+	}
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+*/	
 
 }

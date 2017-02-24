@@ -1,13 +1,15 @@
 package pt.paginasamarelas.dataLayer.hibernate.entities;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 public class ExtBusinessPhone {
 	
 	private BigDecimal caNrid;
 	private String phoneNumber;
-	
-	
+	private Integer template;
+	private Timestamp dmod;
+		
 	public BigDecimal getCaNrid() {
 		return caNrid;
 	}
@@ -20,5 +22,17 @@ public class ExtBusinessPhone {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+	public Integer getTemplate() {
+		return template;
+	}
+	public void setTemplate(Integer template) {
+		this.template = template;
+	}
+	public Timestamp getDmod() {
+		return dmod;
+	}
+	public void setDmod(Timestamp dmod) {
+		this.dmod = dmod;
+	}	
 
 }

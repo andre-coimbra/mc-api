@@ -10,6 +10,8 @@
         </id>
         
         <property name="phoneNumber" column="phone_no"/>
+        <property name="template" column="template"/>
+        <property name="dmod" column="dmod"/>
        
     </class>
 

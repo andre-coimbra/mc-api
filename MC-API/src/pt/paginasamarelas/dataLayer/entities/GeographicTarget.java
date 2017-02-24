@@ -1,13 +1,16 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class GeographicTarget {
 	
 	private PointRadius[] pointRadii;
 	private PostalCodeRadius[] postalCodeRadii;
-	private EngineGeoTarget[] engineGeoTarget;
-	
+	private EngineGeoTarget[] engineGeoTarget;	
 	
 	public PointRadius[] getPointRadii() {
 		return pointRadii;

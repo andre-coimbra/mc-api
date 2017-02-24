@@ -1,18 +1,26 @@
 package pt.paginasamarelas.dataLayer.entities;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_DEFAULT)
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class AdSchedulePeriod {
 
-	private AdSchedulePeriodType type;
+// FM 03.12.2016	private AdSchedulePeriodType type;
+	private String type;
 	private int beginHour;
 	private int endHour;
 	private float bidAdjustmentFactor;
 	
 	
-	public AdSchedulePeriodType getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(AdSchedulePeriodType type) {
-		this.type = type;
+//	public void setType(AdSchedulePeriodType pType) {
+	public void setType(String pType) {
+		this.type = pType;
 	}
 	public int getBeginHour() {
 		return beginHour;
